@@ -32,6 +32,9 @@
     #button:hover {
         background-color: rgb(10, 10, 10);
     }
+    #button:active {
+        background-color: rgb(5, 5, 5);
+    }
     .quicksand-reg {
         font-family: 'Quicksand', sans-serif;
         font-weight: 400;
