@@ -27,3 +27,8 @@
 .markdown table tr:nth-child(2n) {
     background: rgb(45, 45, 45);
 }
+
+.markdown a {
+    color: #00AEFF;
+    text-decoration: underline;
+}
