@@ -12,7 +12,7 @@
     };
 </script>
 
-<div class="container mx-auto p-5 my-5 text-white quicksand-reg rounded-3xl justify-center markdown" id="main-container">
+<div class="container mx-auto p-5 my-5 text-white quicksand-reg rounded-3xl justify-center" id="main-container">
     <div class="container mx-auto p-5 mb-5 flex flex-wrap text-white rounded-3xl" id="mid-section">
         <div class="rounded-3xl p-3" id="top-section">
             <h1 class="text-3xl">{data.title}</h1>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="p-5 rounded-3xl" id="mid-section">
+    <div class="p-5 rounded-3xl markdown" id="mid-section">
         {@html data.content}
     </div>
 </div>
