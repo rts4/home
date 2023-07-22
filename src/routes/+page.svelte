@@ -22,6 +22,7 @@
 <style lang="postcss">
     :global(html) {
         background-color: rgb(15, 15, 15);
+        overflow: scroll;
     }
     #main-container {
         background-color: rgb(30, 30, 30);
