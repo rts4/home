@@ -1,18 +1,14 @@
 <script lang="ts">
-    import type { LimitedShout, ShoutsData } from "./types";
+    import type { ShoutsData } from "./types";
     import { page } from "$app/stores"; 
     import { browser } from "$app/environment";
-    import { onMount } from "svelte";
+    import { lastPage } from "../../stores";
     let pageNum = Number($page.url.searchParams.get("page"));
-    let hasNextPage: boolean;
+    lastPage.set(pageNum);
 
     if (!pageNum && browser) window.location.href = `https://techhh.ca/shouts?page=1`;
 
-    async function fetchShouts(): Promise<ShoutsData> {
-        const data: Promise<ShoutsData> = fetch(`https://api.techhh.ca/shouts?page=${pageNum}`).then(res => res.json());
-        hasNextPage = (await data).hasNext;
-        return data;
-    }
+    export let data: ShoutsData;
 
     function nextPage() {
         pageNum++;
@@ -27,8 +23,7 @@
 
 <div class="container mx-auto p-5 my-5 text-white quicksand-reg rounded-3xl justify-center" id="main-container">
     <h1 class="text-3xl text-center p-2 rounded-3xl" id="mid-section">Shouts: Page {pageNum}</h1>
-    {#await fetchShouts() then shouts}
-        {#each shouts.pageData as shout}
+        {#each data.pageData as shout}
             <div class="mx-auto p-5 my-5 flex flex-wrap rounded-3xl" id="mid-section">
                 <div class="rounded-3xl p-3" id="top-section">
                     <h2 class="text-2xl"><a class={!shout.has_content ? "disabled" : "underline"} href={shout.has_content ? `https://techhh.ca/shouts/${shout.name}` : ""}>{shout.title}</a></h2>
@@ -40,10 +35,9 @@
                 </div>
             </div>
         {/each}
-    {/await}
     <div class="p-2 mt-1 rounded-3xl flex flex-wrap justify-between" id="mid-section">
         <button class="p-2 my-1 rounded-3xl shadow-2xl border border-gray-400 text-center" id="button" disabled={pageNum == 1 ? true : false} on:click={previousPage}>Previous</button>
-        <button class="p-2 my-2 rounded-3xl shadow-2xl border border-gray-400 text-center" id="button" disabled={!hasNextPage ? true : false} on:click={nextPage}>Next</button>
+        <button class="p-2 my-2 rounded-3xl shadow-2xl border border-gray-400 text-center" id="button" disabled={!data.hasNext ? true : false} on:click={nextPage}>Next</button>
     </div>
 </div>
 
@@ -79,5 +73,5 @@
 </style>
 
 <svelte:head>
-    <title>rts4 Shouts Page {pageNum}</title>
+    <title>rts4 Shouts</title>
 </svelte:head>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import "./markdown.css";
     import "./prism.css";
+    import { lastPage } from "../../../stores";
     import type { ShoutData } from "./types";
     export let data: ShoutData = {
         content: '',
@@ -34,6 +35,9 @@
     <div class="p-5 rounded-3xl markdown" id="mid-section">
         {@html data.content}
     </div>
+    <div class="p-5 mt-5 rounded-3xl" id="mid-section">
+        <a class="p-2 my-1 rounded-3xl shadow-2xl border border-gray-400 text-center" id="button" href={`https://techhh.ca/shouts?page=${$lastPage}`}>Back</a>
+    </div>
 </div>
 
 <style lang="postcss">
@@ -45,6 +49,15 @@
     }
     #top-section {
         background-color: rgb(60, 60, 60);
+    }
+    #button {
+        background-color: rgb(20, 20, 20);
+    }
+    #button:hover {
+        background-color: rgb(10, 10, 10);
+    }
+    #button:active {
+        background-color: rgb(5, 5, 5);
     }
     .quicksand-reg {
         font-family: 'Quicksand', sans-serif;
