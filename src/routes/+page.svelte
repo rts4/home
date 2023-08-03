@@ -11,7 +11,7 @@
         <h1 class="text-2xl quicksand-reg">rts4</h1>
         <p class="quicksand-reg w-full text-center p-1">Below is a list of my previous or on-going projects.</p>
         {#each routes as route}
-            <a href={route.href} class="p-2 my-1 rounded-3xl shadow-2xl border border-gray-400 w-full text-center" id="button">{route.name}</a>
+            <a href={route.href} class="p-2 my-1 rounded-3xl shadow-2xl border border-gray-400 w-full text-center quicksand-reg" id="button">{route.name}</a>
         {/each}
         <div class="w-full justify-center p-2">
             <p class="quicksand-reg">Follow me on <a href="https://github.com/rts4" class="underline font-bold">GitHub</a>.</p>
