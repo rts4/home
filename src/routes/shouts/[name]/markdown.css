@@ -67,6 +67,10 @@
     margin-bottom: 20px;
 }
 
+.markdown p:last-of-type {
+    margin-bottom: 0;
+}
+
 .markdown blockquote {
     margin: 0;
     padding: 0 1em;
