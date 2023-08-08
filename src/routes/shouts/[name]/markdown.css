@@ -81,7 +81,7 @@
     border-left: .25em solid rgb(80, 80, 80);
 }
 
-.markdown code {
+.markdown p>code {
     background-color: rgb(30, 30, 30);
     border-radius: 0.5rem;
     padding: 0.125rem 0.5rem;
