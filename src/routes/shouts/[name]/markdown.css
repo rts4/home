@@ -1,21 +1,27 @@
 .markdown h1 {
     font-size: 1.875rem;
     line-height: 2.25rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .markdown h2 {
     font-size: 1.5rem;
     line-height: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .markdown h3 {
     font-size: 1.25rem;
     line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .markdown tr {
     border-top: 1px solid white;
-    background: rgb(45, 45, 45);
+    background: rgb(35, 35, 35);
 }
 
 .markdown th,
@@ -25,10 +31,50 @@
 }
 
 .markdown table tr:nth-child(2n) {
-    background: rgb(45, 45, 45);
+    background: rgb(25, 25, 25);
 }
 
 .markdown a {
     color: #00AEFF;
     text-decoration: underline;
+}
+
+.markdown ul,
+.markdown ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2em;
+}
+
+.markdown li>p {
+    margin-top: 16px;
+}
+
+.markdown li+li {
+    margin-top: .25em;
+}
+
+.markdown ol {
+    list-style-type: upper-roman;
+}
+
+.markdown ul {
+    list-style-type: disc;
+}
+
+.markdown p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.markdown blockquote {
+    margin: 0;
+    padding: 0 1em;
+    border-left: .25em solid rgb(80, 80, 80);
+}
+
+.markdown code {
+    background-color: rgb(30, 30, 30);
+    border-radius: 0.5rem;
+    padding: 0.125rem 0.5rem;
 }
