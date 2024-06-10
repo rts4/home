@@ -1,7 +1,9 @@
 <script lang="ts">
     // Route: {name: string, href: string}
+    // i will probably end up doing something else for the routes sometime in the future
+    // may or may not be stored elsewhere, who knows
     const routes = [
-        { name: "Elements", href: "https://element.techhh.ca" },
+        { name: "TBD", href: "https://techhh.ca" },
         { name: "Quadratics", href: "https://quadratics.techhh.ca" }
     ];
 </script>
@@ -14,7 +16,7 @@
             <a href={route.href} class="p-2 my-1 rounded-3xl shadow-2xl border border-gray-400 w-full text-center quicksand-reg" id="button">{route.name}</a>
         {/each}
         <div class="w-full justify-center p-2">
-            <p class="quicksand-reg">Follow me on <a href="https://github.com/rts4" class="underline font-bold">GitHub</a>.</p>
+            <p class="quicksand-reg">Follow me on <a href="https://github.com/rts4" class="underline font-bold">GitHub</a>. I assure you I will start using this more.</p>
         </div>
     </div>
 </div>
